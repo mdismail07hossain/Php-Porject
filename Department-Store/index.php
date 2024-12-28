@@ -99,13 +99,13 @@
             <!-- Email Input -->
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" name="email" id="email" class="form-control" placeholder="rajib@gmail.com" required>
+                <input type="email" name="email" id="email" class="form-control" placeholder="ismail@gmail.com" required>
             </div>
 
             <!-- Password Input -->
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" name="password" id="password" class="form-control" placeholder="rajib" required>
+                <input type="password" name="password" id="password" class="form-control" placeholder="ismail" required>
             </div>
 
             <!-- Error Message Display -->
