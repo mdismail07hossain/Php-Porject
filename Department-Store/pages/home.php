@@ -76,6 +76,9 @@
 
 
 <style>
+  a{
+    text-decoration: none;
+  }
   .card {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -179,7 +182,7 @@
         </div>
       </div>
     </section>
-  </div>
+  
 </main>
 
 <!-- Add Bootstrap JS and dependencies (Optional for functionality like tooltips or modals) -->
