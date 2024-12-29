@@ -73,7 +73,7 @@
       </div>
     </section>
   </div>
-</main>
+
 
 <style>
   .card {
