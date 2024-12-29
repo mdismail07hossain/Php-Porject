@@ -1,9 +1,9 @@
  
-<?php include('check_user.php'); ?>
-<!-- database  -->
- <?php require_once './config/config.php';?>
 <!-- header part  -->
- <?php  include("./pages/common_pages/header.php");?>
+<?php  include("./pages/common_pages/header.php");?>
+<!-- database  -->
+<?php include('check_user.php'); ?>
+ <?php require_once './config/config.php';?>
 
         <!--navber and sideber part start-->
  <?php include("./pages/common_pages/navber.php");?>
