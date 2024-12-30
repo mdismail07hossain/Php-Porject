@@ -49,41 +49,86 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<link rel="icon" type="image/png" href="./asstes/images/Your Needs.png">
+    <link rel="icon" type="image/png" href="./assets/images/Your Needs.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <!-- Bootstrap CSS -->
-    <link href="./bootstrap/css/adminlte.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: black;
-            /* background: url('<?php echo $background; ?>') no-repeat center center/cover; */
+            background: linear-gradient(135deg, #1a73e8, #ff6f61);
+            font-family: 'Arial', sans-serif;
         }
+
         .login-container {
             background: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            padding: 40px;
             width: 100%;
-            max-width: 450px;
+            max-width: 400px;
         }
+
+        .login-container img {
+            max-width: 180px;
+            margin-bottom: 20px;
+        }
+
         .form-control:focus {
             box-shadow: none;
             border-color: #0d6efd;
         }
+
+        .form-label {
+            font-weight: bold;
+            color: #333;
+        }
+
+        .btn-primary {
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+        .alert-danger {
+            margin-top: 10px;
+            font-size: 14px;
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 10px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            font-size: 14px;
+        }
+
+        .footer a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
     </style>
 </head>
+
 <body>
     <div class="login-container">
         <form action="" method="post">
             <div class="text-center mb-4">
-                <img src="./asstes/images/Your Needs.png" alt="logo" class="img-fluid" style="max-width: 200px;">
+                <img src="./assets/images/Your Needs.png" alt="logo">
             </div>
 
             <!-- Role Selection -->
@@ -99,13 +144,13 @@
             <!-- Email Input -->
             <div class="mb-3">
                 <label for="email" class="form-label">Email</label>
-                <input type="email" name="email" id="email" class="form-control" placeholder="ismail@gmail.com" required>
+                <input type="email" name="email" id="email" class="form-control" placeholder="example@gmail.com" required>
             </div>
 
             <!-- Password Input -->
             <div class="mb-3">
                 <label for="password" class="form-label">Password</label>
-                <input type="password" name="password" id="password" class="form-control" placeholder="ismail" required>
+                <input type="password" name="password" id="password" class="form-control" placeholder="Your Password" required>
             </div>
 
             <!-- Error Message Display -->
@@ -122,7 +167,12 @@
         </form>
     </div>
 
+    <div class="footer">
+        <p>&copy; 2024 <a href="#">Your Needs</a>. All rights reserved.</p>
+    </div>
+
     <!-- Bootstrap JS -->
-    <script src="./bootstrap/js/adminlte.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
