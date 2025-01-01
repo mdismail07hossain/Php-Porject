@@ -1,4 +1,4 @@
-<footer style="background-color: #004c4c;" class="app-footer text-white-50"> <!--begin::To the end-->
+<footer style="background-color:rgb(16, 17, 17);" class="app-footer text-white-50"> <!--begin::To the end-->
             <div class="float-end d-none d-sm-inline">Developed by Md Isamil Hossain</div> <!--end::To the end--> <!--begin::Copyright--> <strong>
                 Copyright &copy; 2024-25&nbsp;
                 <a href="https://adminlte.io" class="text-decoration-none text-white">YourNeeds</a>.

@@ -127,7 +127,7 @@
       <div class="row">
         <!-- Total Medicine -->
         <div class="col-xl-3 col-sm-6 col-12 mb-4">
-          <div class="d-flex justify-content-around align-items-center p-3" style="background-color:rgb(78, 37, 3); border-radius: 15px;">
+          <div class="d-flex justify-content-around align-items-center p-3" style="background-color:rgb(102, 69, 124); border-radius: 15px;">
             <div>
               <i class="bi bi-bag-heart text-info-emphasis fs-1 d-block px-3 py-2 bg-light rounded-circle"></i>
             </div>
@@ -141,7 +141,7 @@
 
         <!-- Out of Stock -->
         <div class="col-xl-3 col-sm-6 col-12 mb-4">
-          <div class="d-flex justify-content-around align-items-center p-3" style="background-color:rgb(78, 37, 3); border-radius: 15px;">
+          <div class="d-flex justify-content-around align-items-center p-3" style="background-color:rgb(102, 69, 124); border-radius: 15px;">
             <div>
               <i class="bi bi-cart-x text-warning-emphasis fs-1 d-block px-3 py-2 bg-light rounded-circle"></i>
             </div>
@@ -155,7 +155,7 @@
 
         <!-- Expired Medicine -->
         <div class="col-xl-3 col-sm-6 col-12 mb-4">
-          <div class="d-flex justify-content-around align-items-center p-3" style="background-color:rgb(78, 37, 3); border-radius: 15px;">
+          <div class="d-flex justify-content-around align-items-center p-3" style="background-color:rgb(102, 69, 124); border-radius: 15px;">
             <div>
               <i class="bi bi-exclamation-triangle text-danger fs-1 d-block px-3 py-2 bg-light rounded-circle"></i>
             </div>
@@ -169,7 +169,7 @@
 
         <!-- Due Customer -->
         <div class="col-xl-3 col-sm-6 col-12 mb-4">
-          <div class="d-flex justify-content-around align-items-center p-3" style="background-color:rgb(78, 37, 3); border-radius: 15px;">
+          <div class="d-flex justify-content-around align-items-center p-3" style="background-color:rgb(102, 69, 124); border-radius: 15px;">
             <div>
               <i class="bi bi-person-exclamation text-primary-emphasis fs-1 d-block px-3 py-2 bg-light rounded-circle"></i>
             </div>
