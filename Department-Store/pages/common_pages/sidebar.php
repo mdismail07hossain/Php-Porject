@@ -13,14 +13,14 @@
                         <li class="nav-item"> <a href="#" class="nav-link"> <i class="bi bi-receipt-cutoff fs-4"></i>
                                 <p>
                                    Sell Products
-                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                    <i class="nav-arrow bi bi-chevron-right fs-4"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item"> <a href="./widgets/small-box.html" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                                <li class="nav-item"> <a href="./widgets/small-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Add New Sell</p>
                                     </a> </li>
-                                <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                                <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Sell List</p>
                                     </a> </li>
                                 
@@ -29,25 +29,25 @@
                         <li class="nav-item"> <a href="#" class="nav-link"> <i class="bi bi-bag-heart fs-4"></i>
                                 <p>
                                    Products
-                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                    <i class="nav-arrow bi bi-chevron-right fs-4"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                            <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                            <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Add New Products</p>
                                     </a> </li>
-                                    <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                                    <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Products List</p>
                                     </a> </li>
-                                <li class="nav-item"> <a href="category.php" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                                <li class="nav-item"> <a href="category.php" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Category</p>
                                     </a> </li>
                 
-                                    <li class="nav-item"> <a href="unit.php" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                                    <li class="nav-item"> <a href="unit.php" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Unit</p>
                                     </a> </li>
                                    
-                                    <li class="nav-item"> <a href="type_medicine.php" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                                    <li class="nav-item"> <a href="type_medicine.php" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Type</p>
                                     </a> </li>
                                 
@@ -56,17 +56,17 @@
                         <li class="nav-item"> <a href="#" class="nav-link"> <i class="bi bi-cart4 fs-4"></i>
                                 <p>
                                    Purchase
-                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                    <i class="nav-arrow bi bi-chevron-right fs-4"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item"> <a href="./widgets/small-box.html" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                                <li class="nav-item"> <a href="./widgets/small-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Add Purchase</p>
                                     </a> </li>
-                                <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                                <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Purchase List</p>
                                     </a> </li>
-                                <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                                <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Purchase History</p>
                                     </a> </li>
                                 
@@ -76,17 +76,17 @@
                         <li class="nav-item"> <a href="#" class="nav-link"><i class="bi bi-person-lines-fill fs-4"></i>
                                 <p>
                                    Supplier
-                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                    <i class="nav-arrow bi bi-chevron-right fs-4"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item"> <a href="./widgets/small-box.html" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                                <li class="nav-item"> <a href="./widgets/small-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Add Supplier</p>
                                     </a> </li>
-                                <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                                <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Supplier List</p>
                                     </a> </li>
-                             <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                             <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Supplier Ledger</p>
                                     </a> </li>
                                 
@@ -95,14 +95,14 @@
                         <li class="nav-item"> <a href="#" class="nav-link"> <i class="bi bi-receipt-cutoff fs-4"></i>
                                 <p>
                                    Invoice
-                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                    <i class="nav-arrow bi bi-chevron-right fs-4"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item"> <a href="./widgets/small-box.html" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                                <li class="nav-item"> <a href="./widgets/small-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Add Invoice</p>
                                     </a> </li>
-                                <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                                <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Invoice History</p>
                                     </a> </li>
                                 
@@ -111,17 +111,17 @@
                         <li class="nav-item"> <a href="#" class="nav-link"> <i class="bi bi-backpack4-fill fs-4"></i>
                                 <p>
                                    Return
-                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                    <i class="nav-arrow bi bi-chevron-right fs-4"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item"> <a href="./widgets/small-box.html" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                                <li class="nav-item"> <a href="./widgets/small-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Invoice Return List</p>
                                     </a> </li>
-                                <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                                <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Supplier Return List</p>
                                     </a> </li>
-                                <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                                <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                     <p>Wastage Return List</p>
                                     </a> </li>
                                 
@@ -131,17 +131,17 @@
                         <li class="nav-item"> <a href="#" class="nav-link"> <i class="bi bi-shop fs-4"></i>
                                 <p>
                                    Stock
-                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                    <i class="nav-arrow bi bi-chevron-right fs-4"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item"> <a href="./widgets/small-box.html" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                                <li class="nav-item"> <a href="./widgets/small-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Stock Report</p>
                                     </a> </li>
-                                <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                                <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Stock Report (Batch Wise)</p>
                                     </a> </li>
-                                <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                                <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                     <p>Available Stock</p>
                                     </a> </li>
                                 
@@ -150,14 +150,14 @@
                         <li class="nav-item"> <a href="#" class="nav-link"><i class="bi bi-people-fill fs-4"></i>
                                 <p>
                                    Customer
-                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                    <i class="nav-arrow bi bi-chevron-right fs-4"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item"> <a href="./widgets/small-box.html" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                                <li class="nav-item"> <a href="./widgets/small-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Add Customer</p>
                                     </a> </li>
-                                <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                                <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Customer List</p>
                                     </a> </li>
                               
@@ -168,23 +168,23 @@
                         <li class="nav-item"> <a href="#" class="nav-link"><i class="bi bi-book fs-4"></i>
                                 <p>
                                    Report
-                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                    <i class="nav-arrow bi bi-chevron-right fs-4"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item"> <a href="./widgets/small-box.html" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                                <li class="nav-item"> <a href="./widgets/small-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>User Report</p>
                                     </a> </li>
-                                <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                                <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>User Wise sale Report</p>
                                     </a> </li>
-                              <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                              <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Product Wise Sales Report</p>
                                     </a> </li>
-                                    <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                                    <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Category Wise Sales Report</p>
                                     </a> </li> 
-                                    <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                                    <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Purchase Report</p>
                                     </a> </li>      
                                 
@@ -193,17 +193,17 @@
                         <li class="nav-item"> <a href="#" class="nav-link"><i class="bi bi-person-workspace fs-4"></i>
                                 <p>
                                    Role
-                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                    <i class="nav-arrow bi bi-chevron-right fs-4 "></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item"> <a href="./widgets/small-box.html" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                                <li class="nav-item"> <a href="./widgets/small-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Add Role</p>
                                     </a> </li>
-                                <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                                <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Role List</p>
                                     </a> </li>
-                                    <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                                    <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Assign List</p>
                                     </a> </li>
                             </ul>
@@ -211,17 +211,17 @@
                         <li class="nav-item"> <a href="#" class="nav-link"><i class="bi bi-gear fs-4"></i>
                                 <p>
                                    Setting
-                                    <i class="nav-arrow bi bi-chevron-right"></i>
+                                    <i class="nav-arrow bi bi-chevron-right fs-4"></i>
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item"> <a href="#" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                                <li class="nav-item"> <a href="#" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Add </p>
                                     </a> </li>
-                                <li class="nav-item"> <a href="#" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                                <li class="nav-item"> <a href="#" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>add</p>
                                     </a> </li>
-                                    <li class="nav-item"> <a href="#" class="nav-link"><i class="bi bi-arrow-right-short ms-3"></i>
+                                    <li class="nav-item"> <a href="#" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Assign List</p>
                                     </a> </li>
                             </ul>
@@ -235,4 +235,4 @@
                     </ul> <!--end::Sidebar Menu-->
                 </nav>
             </div> <!--end::Sidebar Wrapper-->
-        </aside> 
+        </aside>      
