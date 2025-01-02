@@ -168,7 +168,7 @@
     </div>
 
     <div class="footer">
-        <p>&copy; 2024 <a href="#">Your Needs</a>. All rights reserved.</p>
+        <p>&copy;  <?php echo date(format: 'Y');?> <a href="#">Your Needs</a>. All rights reserved.</p>
     </div>
 
     <!-- Bootstrap JS -->
