@@ -160,7 +160,7 @@
               <i class="bi bi-ban text-danger fs-1 d-block px-3 py-2 bg-light rounded-circle"></i>
             </div>
             <div class="d-flex flex-column align-items-center">
-              <h4 class="fw-semibold text-white">Expired Products</h4>
+              <h4 class="fw-semibold text-white">Expired Product</h4>
               <h2 class="text-center text-white">00</h2>
               <a href="#" class="text-info">Show Details</a>
             </div>
