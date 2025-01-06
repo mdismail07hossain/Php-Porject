@@ -148,6 +148,7 @@ $type = isset($_GET['type']) ? $_GET['type'] : null;
 }
 .btn-gradient-success:hover {
     background: linear-gradient(90deg, rgba(102, 192, 255, 1) 0%, rgba(56, 126, 255, 1) 100%);
+    color: white;
 }
 
 /* Hover effect for table rows */
