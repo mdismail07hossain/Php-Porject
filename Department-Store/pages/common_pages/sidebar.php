@@ -10,7 +10,7 @@
                             </a>
                            
                         </li>
-                        <li class="nav-item"> <a href="#" class="nav-link"> <i class="bi bi-boxgit fs-4"></i>
+                        <li class="nav-item"> <a href="#" class="nav-link"> <i class="bi bi-bag fs-4"></i>
                                 <p>
                                    Sell Products
                                     <i class="nav-arrow bi bi-chevron-right fs-4"></i>
