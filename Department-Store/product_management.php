@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "pos_system");
+$conn = mysqli_connect("localhost", "root", "", "phamanest_db");
 
 if (isset($_POST['add_product'])) {
     $name = $_POST['name'];
