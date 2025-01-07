@@ -117,12 +117,17 @@
                             }
 
                             table a {
-                                color: #FF5722;
+                                padding: 5px 10px;
+                                background-color:rgb(126, 9, 9);
                                 text-decoration: none;
+                                color: white;
+                                border: none;
+                                cursor: pointer;
+                                border-radius: 4px;
                             }
 
                             table a:hover {
-                                text-decoration: underline;
+                                background-color:rgb(255, 22, 22);
                             }
 
                             .actions {
@@ -149,9 +154,9 @@
                                     <td><input type="number" name="stock" value="<?php echo htmlspecialchars($product['stock']); ?>"></td>
                                     <td class="actions">
                                         <input type="hidden" name="id" value="<?php echo $product['id']; ?>">
-                                        <button type="submit" name="edit_product">Edit</button>
+                                        <button type="submit" name="edit_product">Update</button>
                                     
-                                        <a href="product_management.php?delete=<?php echo $product['id']; ?>">Delete</a>
+                                        <a href="product_list.php?delete=<?php echo $product['id']; ?>">Delete</a>
                                     </td>
                                 </form>
                             </tr>
