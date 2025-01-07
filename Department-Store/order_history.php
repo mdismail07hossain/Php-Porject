@@ -1,5 +1,5 @@
 <?php
-$conn = mysqli_connect("localhost", "root", "", "pos_system");
+$conn = mysqli_connect("localhost", "root", "", "phamanest_db");
 
 $orders = $conn->query("SELECT * FROM orders");
 
