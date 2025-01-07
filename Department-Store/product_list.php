@@ -10,13 +10,6 @@
                     <?php
                     $conn = mysqli_connect("localhost", "root", "", "phamanest_db");
 
-                    if (isset($_POST['add_product'])) {
-                        $name = $_POST['name'];
-                        $price = $_POST['price'];
-                        $stock = $_POST['stock'];
-                        $conn->query("INSERT INTO products (name, price, stock) VALUES ('$name', $price, $stock)");
-                    }
-
                     if (isset($_POST['edit_product'])) {
                         $id = $_POST['id'];
                         $name = $_POST['name'];
@@ -139,15 +132,7 @@
                         </style>
                     </head>
                     <body>
-                    <main>
-                    <b>
-                        <h2>Product Management</h2>
-                        <form method="POST">
-                            <input type="text" name="name" placeholder="Product Name" required>
-                            <input type="number" name="price" step="0.01" placeholder="Price" required>
-                            <input type="number" name="stock" placeholder="Stock" required>
-                            <button type="submit" name="add_product">Add Product</button>
-                        </form>
+                    <main> 
                         <h3>Products</h3>
                         <table>
                             <tr>

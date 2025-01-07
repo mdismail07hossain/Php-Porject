@@ -125,7 +125,6 @@
                     </head>
                     <body>
                     <main>
-                    <b>
                         <h2>Product Management</h2>
                         <form method="POST">
                             <input type="text" name="name" placeholder="Product Name" required>
