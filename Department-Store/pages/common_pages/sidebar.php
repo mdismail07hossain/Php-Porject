@@ -60,7 +60,7 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item"> <a href="add_purchase.php" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
+                                <li class="nav-item"> <a href="add_sales.php" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Add Purchase</p>
                                     </a> </li>
                                 <li class="nav-item"> <a href="purchase_history.php" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
