@@ -9,7 +9,6 @@
                     <?php include("./pages/common_pages/sidebar.php"); ?>
                     <?php
                     $conn = mysqli_connect("localhost", "root", "", "phamanest_db");
-
                     if (isset($_POST['add_product'])) {
                         $name = $_POST['name'];
                         $price = $_POST['price'];
