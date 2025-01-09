@@ -32,12 +32,12 @@
                         <meta name="viewport" content="width=device-width, initial-scale=1.0">
                         <title>Product Management</title>
                         <style>
-                            body {
+                            /* body {
                                 font-family: Arial, sans-serif;
                                 margin: 20px;
                                 background-color: #f4f4f9;
                                 color: #333;
-                            }
+                            } */
 
                             h2, h3 {
                                 text-align: center;

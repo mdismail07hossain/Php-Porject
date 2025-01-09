@@ -1,5 +1,5 @@
-<aside style="background-color:rgb(104, 162, 238)" class="app-sidebar shadow" data-bs-theme="dark"> <!--begin::Sidebar Brand-->
-            <div class="sidebar-brand"> <!--begin::Brand Link--> <a href="./index.html" class="brand-link"> <!--begin::Brand Image--> <img src="./asstes/images/Your_Needs1.png" alt="AdminLTE Logo" ></a> <!--end::Brand Link--> </div> <!--end::Sidebar Brand--> <!--begin::Sidebar Wrapper-->
+<aside style="background-color:rgb(2, 1, 10)" class="app-sidebar shadow" data-bs-theme="dark"> <!--begin::Sidebar Brand-->
+            <div class="sidebar-brand" style="height:100px"> <!--begin::Brand Link--> <a href="dashboard.php" class="brand-link"> <!--begin::Brand Image--> <img class="img-fluid" src="./asstes/images/Your_Needs1.png" alt="Logo" ></a> <!--end::Brand Link--> </div> <!--end::Sidebar Brand--> <!--begin::Sidebar Wrapper-->
             <div class="sidebar-wrapper">
                 <nav class="mt-2"> <!--begin::Sidebar Menu-->
                     <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu" data-accordion="false">
@@ -17,10 +17,10 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item"> <a href="#" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
+                                <li class="nav-item"> <a href="add_purchase.php" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Add New Sell</p>
                                     </a> </li>
-                                <li class="nav-item"> <a href="#" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
+                                <li class="nav-item"> <a href="purchase_history.php" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Sell List</p>
                                     </a> </li>
                                 

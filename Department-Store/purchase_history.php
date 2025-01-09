@@ -28,12 +28,12 @@
                             <title>Order History</title>
                             <!------------------------- design start  ---------------------->
                             <style>
-                                body {
+                                /* body {
                                     font-family: Arial, sans-serif;
                                     margin: 20px;
                                     background-color: #f9f9f9;
                                     color: #333;
-                                }
+                                } */
 
                                 h2 {
                                     text-align: center;
