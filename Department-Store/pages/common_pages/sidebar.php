@@ -99,10 +99,10 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item"> <a href="./widgets/small-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
+                                <li class="nav-item"> <a href="invoice.php" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Add Invoice</p>
                                     </a> </li>
-                                <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
+                                <li class="nav-item"> <a href="invoice.php" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Invoice History</p>
                                     </a> </li>
                                 
