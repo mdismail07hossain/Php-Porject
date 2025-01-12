@@ -9,4 +9,3 @@
 <?php include("./pages/common_pages/navber.php"); ?>
 <?php include("./pages/common_pages/sidebar.php"); ?>
   
-<?php include("./pages/common_pages/footer.php"); ?>
