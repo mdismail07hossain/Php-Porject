@@ -168,7 +168,7 @@
                 <tr><td>Tax</td><td>$" . number_format($tax, 2) . "</td></tr>
                 <tr><td><strong>Net Total</strong></td><td><strong>$" . number_format($netTotal, 2) . "</strong></td></tr>
               </table>";
-              header("location:invoice.php");
+             
     }
     ?>
     </main>
