@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 12, 2025 at 05:40 PM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.2.0
+-- Generation Time: Jan 13, 2025 at 08:08 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -115,26 +115,11 @@ CREATE TABLE `medicine_type` (
 --
 
 INSERT INTO `medicine_type` (`id`, `type_name`, `type_status`) VALUES
-(1, 'Tablet', '1'),
-(2, 'Capsule', '1'),
-(3, 'Syrup', '1'),
-(4, 'Suspension', '1'),
-(5, 'Injection', '1'),
-(6, 'Ampoule', '2'),
-(7, 'Vial', '1'),
-(8, 'Ointment', '1'),
-(9, 'Cream', '1'),
-(10, 'Gel', '1'),
-(11, 'Inhaler', '1'),
-(12, 'Nebulizer Solution', '1'),
-(13, 'Drops', '1'),
-(14, 'Suppository', '1'),
-(15, 'Lozenge', '1'),
-(16, 'Powder', '1'),
-(17, 'Granules', '1'),
-(18, 'Spray', '1'),
-(19, 'Liquid Bottle', '1'),
-(20, 'Patch', '2');
+(1, 'Food', '1'),
+(2, 'Baby Care', '2'),
+(3, 'Personal Care', '2'),
+(4, 'Pet Care', '1'),
+(21, 'Home & Kitchen', '1');
 
 -- --------------------------------------------------------
 
@@ -156,16 +141,18 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`id`, `order_date`, `total_amount`, `discount`, `tax`, `net_total`) VALUES
-(1, '2024-12-08 14:33:14', '0.00', '0.00', '0.00', '0.00'),
-(2, '2024-12-08 14:40:32', '0.00', '0.00', '0.00', '0.00'),
-(3, '2024-12-08 15:19:03', '11800.00', '1770.00', '501.50', '10531.50'),
-(4, '2024-12-08 15:23:32', '350.00', '24.50', '9.77', '335.27'),
-(5, '2024-12-11 13:34:56', '250.00', '0.00', '0.00', '250.00'),
-(6, '2024-12-11 13:44:58', '250.00', '15.00', '7.05', '242.05'),
-(7, '2024-12-11 14:31:02', '10.60', '0.74', '0.39', '10.25'),
-(8, '2025-01-10 15:36:25', '0.00', '0.00', '0.00', '0.00'),
-(9, '2025-01-10 15:42:35', '1.00', '0.00', '0.00', '1.00'),
-(10, '2025-01-10 16:06:06', '31.00', '0.00', '0.00', '31.00');
+(1, '2024-12-08 14:33:14', 0.00, 0.00, 0.00, 0.00),
+(2, '2024-12-08 14:40:32', 0.00, 0.00, 0.00, 0.00),
+(3, '2024-12-08 15:19:03', 11800.00, 1770.00, 501.50, 10531.50),
+(4, '2024-12-08 15:23:32', 350.00, 24.50, 9.77, 335.27),
+(5, '2024-12-11 13:34:56', 250.00, 0.00, 0.00, 250.00),
+(6, '2024-12-11 13:44:58', 250.00, 15.00, 7.05, 242.05),
+(7, '2024-12-11 14:31:02', 10.60, 0.74, 0.39, 10.25),
+(8, '2025-01-10 15:36:25', 0.00, 0.00, 0.00, 0.00),
+(9, '2025-01-10 15:42:35', 1.00, 0.00, 0.00, 1.00),
+(10, '2025-01-10 16:06:06', 31.00, 0.00, 0.00, 31.00),
+(11, '2025-01-13 03:06:30', 4.90, 0.00, 0.00, 4.90),
+(12, '2025-01-13 03:08:27', 4.90, 0.00, 0.00, 4.90);
 
 -- --------------------------------------------------------
 
@@ -186,21 +173,27 @@ CREATE TABLE `order_items` (
 --
 
 INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `quantity`, `subtotal`) VALUES
-(1, 3, 1, 100, '10000.00'),
-(2, 3, 3, 12, '1800.00'),
-(3, 4, 1, 2, '200.00'),
-(4, 4, 3, 1, '150.00'),
-(5, 5, 1, 1, '100.00'),
-(6, 5, 3, 1, '150.00'),
-(7, 6, 1, 1, '100.00'),
-(8, 6, 3, 1, '150.00'),
-(9, 7, 1, 4, '4.00'),
-(10, 7, 3, 2, '3.00'),
-(11, 7, 4, 3, '3.60'),
-(12, 9, 1, 1, '1.00'),
-(13, 10, 1, 1, '1.00'),
-(14, 10, 6, 1, '10.00'),
-(15, 10, 7, 1, '20.00');
+(1, 3, 1, 100, 10000.00),
+(2, 3, 3, 12, 1800.00),
+(3, 4, 1, 2, 200.00),
+(4, 4, 3, 1, 150.00),
+(5, 5, 1, 1, 100.00),
+(6, 5, 3, 1, 150.00),
+(7, 6, 1, 1, 100.00),
+(8, 6, 3, 1, 150.00),
+(9, 7, 1, 4, 4.00),
+(10, 7, 3, 2, 3.00),
+(11, 7, 4, 3, 3.60),
+(12, 9, 1, 1, 1.00),
+(13, 10, 1, 1, 1.00),
+(14, 10, 6, 1, 10.00),
+(15, 10, 7, 1, 20.00),
+(16, 11, 1, 1, 1.00),
+(17, 11, 3, 1, 1.50),
+(18, 11, 4, 2, 2.40),
+(19, 12, 1, 1, 1.00),
+(20, 12, 3, 1, 1.50),
+(21, 12, 4, 2, 2.40);
 
 -- --------------------------------------------------------
 
@@ -220,12 +213,22 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `price`, `stock`) VALUES
-(1, 'Milk', '1.00', 94),
-(3, 'egg', '1.50', 98),
-(4, 'Sugear', '1.20', 97),
-(6, 'Meat', '10.00', 99),
-(7, 'Fish', '20.00', 49),
-(8, 'Rice', '5.00', 200);
+(1, 'Milk', 1.00, 92),
+(3, 'Egg', 1.00, 90),
+(4, 'Sugear', 1.20, 93),
+(6, 'Meat', 10.00, 99),
+(7, 'Fish', 20.00, 49),
+(8, 'Rice', 5.00, 200),
+(9, 'Atta', 1.00, 500),
+(10, 'Potato', 1.00, 200),
+(11, 'Dal', 1.50, 200),
+(12, 'Salt', 1.00, 100),
+(13, 'Onion', 1.50, 150),
+(14, 'Maggi', 1.00, 50),
+(15, 'Baby Food', 1.00, 40),
+(16, 'Pet food', 2.00, 30),
+(17, 'Diapers', 1.00, 100),
+(18, 'Edible Oil', 2.00, 300);
 
 -- --------------------------------------------------------
 
@@ -260,6 +263,36 @@ CREATE TABLE `sales_items` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `suppliers`
+--
+
+CREATE TABLE `suppliers` (
+  `id` int(11) NOT NULL,
+  `supplier_name` varchar(255) NOT NULL,
+  `company` varchar(255) NOT NULL,
+  `mobile_number` varchar(20) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `address` text NOT NULL,
+  `city` varchar(255) NOT NULL,
+  `state` varchar(255) NOT NULL,
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `suppliers`
+--
+
+INSERT INTO `suppliers` (`id`, `supplier_name`, `company`, `mobile_number`, `email`, `address`, `city`, `state`, `created_at`) VALUES
+(1, 'Munna', 'Pure', '0211456415644', 'munna@gmail.com', 'Mirpur, dhaka-1207.', 'Dhaka', 'Dhaka', '2025-01-13 06:14:10'),
+(2, 'Rajib', 'Prun', '015478245', 'rajib@gmail.com', 'Mirpur-2, dhaka-1207.', 'Dhaka', 'Dhaka', '2025-01-13 06:19:43'),
+(3, 'Rajib', 'Prun', '015478245', 'rajib@gmail.com', 'Mirpur-2, dhaka-1207.', 'Dhaka', 'Dhaka', '2025-01-13 06:20:15'),
+(4, 'Rajib Hossain', 'PrunXL', '0136547869', 'rajib12@gmail.com', 'Mirpur, dhaka-1207.', 'Dhaka', 'Dhaka', '2025-01-13 06:25:27'),
+(5, 'Rajib Hossain', 'PrunXL', '0136547869', 'rajib12@gmail.com', 'Mirpur, dhaka-1207.', 'Dhaka', 'Dhaka', '2025-01-13 06:29:14'),
+(6, 'Rajib Hossain', 'PrunXL', '0136547869', 'rajib12@gmail.com', 'Mirpur, dhaka-1207.', 'Dhaka', 'Dhaka', '2025-01-13 06:32:38');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `unit`
 --
 
@@ -268,19 +301,6 @@ CREATE TABLE `unit` (
   `unit_name` varchar(100) NOT NULL,
   `unit_status` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `unit`
---
-
-INSERT INTO `unit` (`id`, `unit_name`, `unit_status`) VALUES
-(2, 'Pack', '1'),
-(4, 'Box', '1'),
-(5, '1 strip = 10 pice', '1'),
-(6, 'Pic', '1'),
-(7, 'Bottle', '1'),
-(8, 'Carton', '2'),
-(9, 'Pallet', '1');
 
 --
 -- Indexes for dumped tables
@@ -345,6 +365,12 @@ ALTER TABLE `sales_items`
   ADD KEY `product_id` (`product_id`);
 
 --
+-- Indexes for table `suppliers`
+--
+ALTER TABLE `suppliers`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `unit`
 --
 ALTER TABLE `unit`
@@ -376,25 +402,25 @@ ALTER TABLE `manager`
 -- AUTO_INCREMENT for table `medicine_type`
 --
 ALTER TABLE `medicine_type`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `sales`
@@ -407,6 +433,12 @@ ALTER TABLE `sales`
 --
 ALTER TABLE `sales_items`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `suppliers`
+--
+ALTER TABLE `suppliers`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `unit`
