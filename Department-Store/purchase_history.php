@@ -94,7 +94,7 @@
                         </head>
                         <body>
                             <main>
-                            <h2>Order History</h2>
+                            <h2>Purchase History</h2>
                             <table>
                                 <tr>
                                     <th>Order ID</th>
