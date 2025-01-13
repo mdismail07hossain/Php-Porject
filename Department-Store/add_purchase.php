@@ -129,7 +129,7 @@
                 <label>Discount (%): <input type="number" name="discount" value="0" min="0" max="100"></label>
                 <label>Tax Rate (%): <input type="number" name="tax" value="0" min="0" max="100"></label>
             </div>
-            <button type="submit" name="process_order">Process Order</button>
+            <button class="d-block mx-auto" type="submit" name="process_order">Process Order</button>
         </form>
     
 

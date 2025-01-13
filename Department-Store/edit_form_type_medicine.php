@@ -27,7 +27,7 @@ if (isset($_GET['id'])) {
         <!-- display error message  -->
         <div class="card">
           <div class="card-header">
-            <h4>Edit Medicine Type</h4>
+            <h4>Edit Produt Category Type</h4>
           </div>
           <div class="card-body">
             <div id="add-brand-messages"></div>

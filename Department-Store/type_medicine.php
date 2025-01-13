@@ -40,20 +40,20 @@ $type = isset($_GET['type']) ? $_GET['type'] : null;
 
         <div class="card">
           <div class="card-header">
-            <h4>Add Medicine Type</h4>
+            <h4>Add Catagory Type</h4>
           </div>
           <div class="card-body">
             <div id="add-brand-messages"></div>
             <form class="form-horizontal" method="POST" id="submitBrandForm" action="./php_action/create_medicine_type.php" enctype="multipart/form-data">
               <!-- Unit Name -->
               <div class="form-group row">
-                <label class="col-sm-3 control-label" for="categoriesName">Medicine Type</label>
+                <label class="col-sm-3 control-label" for="categoriesName">Product Type</label>
                 <div class="col-sm-9 mb-2">
                   <input 
                     type="text" 
                     class="form-control" 
                     name="type" 
-                    placeholder="Medicine type Name" 
+                    placeholder="Catagory type Name" 
                     required  
                     title="Only alphabets are allowed.">
                 </div>
@@ -101,7 +101,7 @@ $type = isset($_GET['type']) ? $_GET['type'] : null;
   <!-- display category list  -->
    <section>
    <div class="container my-5">
-        <h2 class="mb-4 text-center">Medicine Type List</h2>
+        <h2 class="mb-4 text-center">Catagory Type List</h2>
         <table class="table table-striped table-bordered align-middle">
             <thead class="table-success">
                 <tr>
