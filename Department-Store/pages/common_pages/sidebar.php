@@ -80,15 +80,13 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item"> <a href="./widgets/small-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
+                                <li class="nav-item"> <a href="add_supplier.php" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Add Supplier</p>
                                     </a> </li>
-                                <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
+                                <li class="nav-item"> <a href="supplier_list.php" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Supplier List</p>
                                     </a> </li>
-                             <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
-                                        <p>Supplier Ledger</p>
-                                    </a> </li>
+                             
                                 
                             </ul>
                         </li>

@@ -35,6 +35,11 @@ $type = isset($_GET['type']) ? $_GET['type'] : null;
             echo "<p id='message' style='color: red;font-size: 25px;'>" . htmlspecialchars($_SESSION['error']) . "</p>";
             unset($_SESSION['error']); // Clear the message after displaying it
         }
+        if(isset($_GET["delete"])){
+          $deleteid=$_GET["delete"];
+          $connt=mysqli_connect("localhost","root","","phamanest_db",);
+          $connt->query("DELETE FROM medicine_type WHERE  id=$deleteid");
+        }
         ?>
 
 
@@ -75,7 +80,7 @@ $type = isset($_GET['type']) ? $_GET['type'] : null;
               <!-- Submit Button -->
               <div class="form-group row">
                 <div class="col-sm-12 text-end mt-3">
-                  <button type="submit" name="create" id="createCategoriesBtn" class="btn btn-success">
+                  <button type="submit" name="create" id="createCategoriesBtn" class="btn btn-info text-white">
                     Submit
                   </button>
                 </div>
@@ -106,7 +111,7 @@ $type = isset($_GET['type']) ? $_GET['type'] : null;
             <thead class="table-success">
                 <tr>
                     <th scope="col">SL</th>
-                    <th scope="col">Medicine Type Name</th>
+                    <th scope="col">Product Type Name</th>
                     <th scope="col">Status</th>
                     <th scope="col">Action</th>
                 </tr>
@@ -121,10 +126,10 @@ $type = isset($_GET['type']) ? $_GET['type'] : null;
                       while (list($id,$type,$status) = $type_status->fetch_row()) {
                         if($status == 1) {
                           // activate member
-                          $active_type = "<span class='badge bg-success'>Active</span>";
+                          $active_type = "<span class='badge bg-success'>Stock</span>";
                         } else {
                           // deactivate member
-                          $active_type = "<span class='badge bg-warning text-dark'>Inactive</span>";
+                          $active_type = "<span class='badge bg-warning text-dark'>Stock Out</span>";
                         }
     
                               echo "<tr>
@@ -139,7 +144,7 @@ $type = isset($_GET['type']) ? $_GET['type'] : null;
                                   <i class='bi bi-pencil-square'></i>
                                   </a>
               
-                                  <a href='./php_action/unit_delete.php?id=$id' class='btn btn-danger btn-sm text-white' data-bs-toggle='tooltip' 
+                                  <a href='type_medicine.php?delete=$id' class='btn btn-danger btn-sm text-white' data-bs-toggle='tooltip' 
                                   title='Delete'>
                                   <i class='bi bi-trash'></i>
                                   </a>
