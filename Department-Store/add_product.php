@@ -31,22 +31,24 @@
                             } */
 
                             h2, h3 {
+                                margin-top: 20px;
                                 text-align: center;
+                                font-weight: bold;
                                 color:rgb(53, 6, 140);
                             }
 
                             form {
-                                max-width: 600px;
-                                margin: 20px auto;
+                                /* max-width: 900px; */
+                                /* margin: 20px auto; */
                                 padding: 20px;
-                                background-color: #fff;
+                                /* background-color: #fff; */
                                 border: 1px solid #ddd;
                                 border-radius: 8px;
                                 box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
                             }
 
                             form input, form button {
-                                width: 100%;
+                                /* width: 100%; */
                                 padding: 10px;
                                 margin: 10px 0;
                                 border: 1px solid #ccc;
@@ -79,7 +81,7 @@
                             }
 
                             th {
-                                background-color:rgb(28, 18, 225);
+                                background-color:rgb(63, 66, 68);
                                 color: white;
                             }
 
@@ -126,13 +128,90 @@
                     <main>
                         <h2>Product Management</h2>
                         <form method="POST">
-                            <input type="text" name="name" placeholder="Product Name" required>
-                            <input type="number" name="price" step="0.01" placeholder="Price" required>
-                            <input type="number" name="stock" placeholder="Stock" required>
+                            <table id="medicineSellTable">
+                                <tr>
+                                    <th>Product Name </th>
+                                    <th>Product Price </th>
+                                    <th>Product Stock </th>
+                                    <th>Action</th>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" name="name" placeholder="product name" id="name" >
+                                    </td>
+                                    <td>
+                                    <input type="number" name="price" placeholder="product price" id="price" >
+                                    </td>
+                                    <td>
+                                    <input type="number" name="stock" placeholder="product stock" id="stock" >
+                                    </td>
+                                    <td>
+                                     <button type="button" class="btn btn-danger btn-sm" onclick="removeMedicineRow(this)">
+                                     <i class="bi bi-trash"></i>
+                                    </button>
+                                     </td>
+                                </tr>
+                            </table>
                             <button type="submit" name="add_product">Add Product</button>
+                            <div class="">
+                                <button type="button" class="btn  fw-bold " onclick="addMedicineRow()">
+                                 <i class="bi bi-plus-square fw-bold"></i> 
+                                </button>
+                        </div>
                         </form>
                        
                             </main>
 
+                            <script>
+    // Function to add a new row
+    function addMedicineRow() {
+        const table = document.getElementById('medicineSellTable').getElementsByTagName('tbody')[0];
+        const newRow = table.insertRow();
+
+        // Product Name
+        const cell1 = newRow.insertCell(0);
+        const input1 = document.createElement('input');
+        input1.type = 'text';
+        input1.className = 'form-control';
+        input1.name = "name";
+        input1.placeholder = 'Product Name';
+        cell1.appendChild(input1);
+
+        //Product price
+        const cell2 = newRow.insertCell(1);
+        const input2 = document.createElement('input');
+        input2.type = 'number';
+        input2.className = 'form-control quantity';
+        input2.name = 'price';
+        input2.placeholder = 'Enter product price';
+        cell2.appendChild(input2);
+
+        // Product stock
+        const cell3 = newRow.insertCell(2);
+        const input3 = document.createElement('input');
+        input3.type = 'number';
+        input3.className = 'form-control price';
+        input3.name = 'stock';
+        input3.placeholder = 'Product stock';
+        cell3.appendChild(input3);
+        // Remove Button
+        const cell5 = newRow.insertCell(3);
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'btn btn-danger btn-sm';
+        button.innerHTML = '<i class="bi bi-trash"></i>';
+        button.onclick = function () {
+            removeMedicineRow(button);
+        };
+        cell5.appendChild(button);
+    }
+
+    // Function to remove a row
+    function removeMedicineRow(button) {
+        const row = button.closest('tr');
+        row.remove();
+        calculateSubTotal();
+    }
+</script>
 
                     <?php include("./pages/common_pages/footer.php");?>
