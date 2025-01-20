@@ -10,11 +10,17 @@
                     <?php
                     $conn = mysqli_connect("localhost", "root", "", "phamanest_db");
                     if (isset($_POST['add_product'])) {
-                        $name = $_POST['name'];
-                        $price = $_POST['price'];
-                        $stock = $_POST['stock'];
-                        $conn->query("INSERT INTO products (name, price, stock) VALUES ('$name', $price, $stock)");
-                    }
+                        $names = $_POST['name'];
+                        $prices = $_POST['price'];
+                        $stocks = $_POST['stock'];
+                        // $conn->query("INSERT INTO products (name, price, stock) VALUES ('$name', $price, $stock)");
+                    
+                    if (!empty($names)) {
+                        foreach ($names as $index => $name) {
+                            $price = $prices[$index];
+                            $stock = $stocks[$index];
+                            $conn->query("INSERT INTO products (name, price, stock) VALUES ('$name', $price, $stock)");
+                        }}}
                     ?>
                     <!DOCTYPE html>
                     <html lang="en">
@@ -137,13 +143,13 @@
                                 </tr>
                                 <tr>
                                     <td>
-                                        <input type="text" name="name" placeholder="product name" id="name" >
+                                        <input type="text" name="name[]" placeholder="product name" id="name" >
                                     </td>
                                     <td>
-                                    <input type="number" name="price" placeholder="product price" id="price" >
+                                    <input type="number" name="price[]" placeholder="product price" id="price" >
                                     </td>
                                     <td>
-                                    <input type="number" name="stock" placeholder="product stock" id="stock" >
+                                    <input type="number" name="stock[]" placeholder="product stock" id="stock" >
                                     </td>
                                     <td>
                                      <button type="button" class="btn btn-danger btn-sm" onclick="removeMedicineRow(this)">
@@ -163,55 +169,55 @@
                             </main>
 
                             <script>
-    // Function to add a new row
-    function addMedicineRow() {
-        const table = document.getElementById('medicineSellTable').getElementsByTagName('tbody')[0];
-        const newRow = table.insertRow();
+            // Function to add a new row
+            function addMedicineRow() {
+                const table = document.getElementById('medicineSellTable').getElementsByTagName('tbody')[0];
+                const newRow = table.insertRow();
 
-        // Product Name
-        const cell1 = newRow.insertCell(0);
-        const input1 = document.createElement('input');
-        input1.type = 'text';
-        input1.className = 'form-control';
-        input1.name = "name";
-        input1.placeholder = 'Product Name';
-        cell1.appendChild(input1);
+                // Product Name
+                const cell1 = newRow.insertCell(0);
+                const input1 = document.createElement('input');
+                input1.type = 'text';
+                input1.className = 'form-control';
+                input1.name = "name[]";
+                input1.placeholder = 'Product Name';
+                cell1.appendChild(input1);
 
-        //Product price
-        const cell2 = newRow.insertCell(1);
-        const input2 = document.createElement('input');
-        input2.type = 'number';
-        input2.className = 'form-control quantity';
-        input2.name = 'price';
-        input2.placeholder = 'Enter product price';
-        cell2.appendChild(input2);
+                //Product price
+                const cell2 = newRow.insertCell(1);
+                const input2 = document.createElement('input');
+                input2.type = 'number';
+                input2.className = 'form-control quantity';
+                input2.name = 'price[]';
+                input2.placeholder = 'Enter product price';
+                cell2.appendChild(input2);
 
-        // Product stock
-        const cell3 = newRow.insertCell(2);
-        const input3 = document.createElement('input');
-        input3.type = 'number';
-        input3.className = 'form-control price';
-        input3.name = 'stock';
-        input3.placeholder = 'Product stock';
-        cell3.appendChild(input3);
-        // Remove Button
-        const cell5 = newRow.insertCell(3);
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.className = 'btn btn-danger btn-sm';
-        button.innerHTML = '<i class="bi bi-trash"></i>';
-        button.onclick = function () {
-            removeMedicineRow(button);
-        };
-        cell5.appendChild(button);
-    }
+                // Product stock
+                const cell3 = newRow.insertCell(2);
+                const input3 = document.createElement('input');
+                input3.type = 'number';
+                input3.className = 'form-control price';
+                input3.name = 'stock[]';
+                input3.placeholder = 'Product stock';
+                cell3.appendChild(input3);
+                // Remove Button
+                const cell5 = newRow.insertCell(3);
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.className = 'btn btn-danger btn-sm';
+                button.innerHTML = '<i class="bi bi-trash"></i>';
+                button.onclick = function () {
+                    removeMedicineRow(button);
+                };
+                cell5.appendChild(button);
+            }
 
-    // Function to remove a row
-    function removeMedicineRow(button) {
-        const row = button.closest('tr');
-        row.remove();
-        calculateSubTotal();
-    }
-</script>
+            // Function to remove a row
+            function removeMedicineRow(button) {
+                const row = button.closest('tr');
+                row.remove();
+                calculateSubTotal();
+            }
+        </script>
 
                     <?php include("./pages/common_pages/footer.php");?>
