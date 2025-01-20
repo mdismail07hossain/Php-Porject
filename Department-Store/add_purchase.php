@@ -92,7 +92,7 @@
     </script>
 </head>
 <body>
-    <main>
+    <main class="m-5 ">
         <h2>Point of Sale</h2>
         <div class="form-group">
             <label for="search-input">Search by name</label>
