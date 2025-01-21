@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 13, 2025 at 08:08 AM
+-- Generation Time: Jan 21, 2025 at 08:07 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -73,6 +73,31 @@ INSERT INTO `category` (`id`, `category_name`, `category_status`) VALUES
 (33, 'Immunosuppressants', 1),
 (34, 'Proton Pump Inhibitors', 1),
 (35, 'Statins', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer`
+--
+
+CREATE TABLE `customer` (
+  `id` int(10) NOT NULL,
+  `customer_name` varchar(100) DEFAULT NULL,
+  `phone` int(15) NOT NULL,
+  `email` varchar(100) DEFAULT NULL,
+  `home_address` varchar(100) DEFAULT NULL,
+  `identifire_name` varchar(100) NOT NULL,
+  `identifire_number` int(15) NOT NULL,
+  `status` int(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `customer`
+--
+
+INSERT INTO `customer` (`id`, `customer_name`, `phone`, `email`, `home_address`, `identifire_name`, `identifire_number`, `status`) VALUES
+(1, ' Rajib', 136547869, 'rajib12@gmail.com', 'Mirpur, dhaka-1207.', 'Ismail', 136547869, 1),
+(2, ' Munni', 1365469677, 'munni@gmail.com', 'Mirpur-2, dhaka-1207.', 'Ismail', 15478245, 1);
 
 -- --------------------------------------------------------
 
@@ -152,7 +177,9 @@ INSERT INTO `orders` (`id`, `order_date`, `total_amount`, `discount`, `tax`, `ne
 (9, '2025-01-10 15:42:35', 1.00, 0.00, 0.00, 1.00),
 (10, '2025-01-10 16:06:06', 31.00, 0.00, 0.00, 31.00),
 (11, '2025-01-13 03:06:30', 4.90, 0.00, 0.00, 4.90),
-(12, '2025-01-13 03:08:27', 4.90, 0.00, 0.00, 4.90);
+(12, '2025-01-13 03:08:27', 4.90, 0.00, 0.00, 4.90),
+(13, '2025-01-14 03:25:54', 5.00, 0.25, 0.14, 4.89),
+(14, '2025-01-21 05:13:07', 25.00, 0.00, 1.25, 26.25);
 
 -- --------------------------------------------------------
 
@@ -193,7 +220,9 @@ INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `quantity`, `subtotal
 (18, 11, 4, 2, 2.40),
 (19, 12, 1, 1, 1.00),
 (20, 12, 3, 1, 1.50),
-(21, 12, 4, 2, 2.40);
+(21, 12, 4, 2, 2.40),
+(22, 13, 1, 5, 5.00),
+(23, 14, 8, 5, 25.00);
 
 -- --------------------------------------------------------
 
@@ -213,12 +242,12 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `name`, `price`, `stock`) VALUES
-(1, 'Milk', 1.00, 92),
+(1, 'Milk', 1.00, 87),
 (3, 'Egg', 1.00, 90),
 (4, 'Sugear', 1.20, 93),
 (6, 'Meat', 10.00, 99),
 (7, 'Fish', 20.00, 49),
-(8, 'Rice', 5.00, 200),
+(8, 'Rice', 5.00, 195),
 (9, 'Atta', 1.00, 500),
 (10, 'Potato', 1.00, 200),
 (11, 'Dal', 1.50, 200),
@@ -319,6 +348,12 @@ ALTER TABLE `category`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `customer`
+--
+ALTER TABLE `customer`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `manager`
 --
 ALTER TABLE `manager`
@@ -393,6 +428,12 @@ ALTER TABLE `category`
   MODIFY `id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
 
 --
+-- AUTO_INCREMENT for table `customer`
+--
+ALTER TABLE `customer`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `manager`
 --
 ALTER TABLE `manager`
@@ -408,19 +449,19 @@ ALTER TABLE `medicine_type`
 -- AUTO_INCREMENT for table `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
 
 --
 -- AUTO_INCREMENT for table `sales`
