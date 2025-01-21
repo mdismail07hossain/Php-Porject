@@ -93,7 +93,7 @@
                             <!-------------- design end  --------------------->
                         </head>
                         <body>
-                            <main>
+                            <main class="m-5">
                             <h2>Purchase History</h2>
                             <table>
                                 <tr>

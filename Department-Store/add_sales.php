@@ -21,16 +21,16 @@ $type = isset($_GET['type']) ? $_GET['type'] : null;
             text-align: center;
             color: rgb(9, 20, 141);
         }      
- 
+                   
   </style>
 
-<main  class="app-main">
+<main  class="app-main m-5">
 
 <div class="container mt-5">
         <div class="d-flex justify-content-between">
         <h1 >Sell Product</h1>
             <div>
-            <a href="sell_list.php" class="btn btn-success d-block my-2" role="button">
+            <a href="purchase_history.php" class="btn btn-success d-block my-2" role="button">
         View Sell List
         </a>
             </div>
