@@ -41,7 +41,8 @@
 
                             h2, h3 {
                                 text-align: center;
-                                color:rgb(53, 6, 140);
+                                font-weight: bold;
+                                color:rgb(18, 34, 173);
                             }
 
                             form {
@@ -137,8 +138,8 @@
                         </style>
                     </head>
                     <body>
-                    <main> 
-                        <h3>Products</h3>
+                    <main class="m-5" >
+                        <h3>Product list</h3>
                         <table>
                             <tr>
                                 <th>Name</th>
