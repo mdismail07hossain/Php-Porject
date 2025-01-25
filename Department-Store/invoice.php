@@ -34,6 +34,34 @@
                                     background-color: #f9f9f9;
                                     color: #333;
                                 } */
+                                                                .details {
+                                    background-color: #f9f9f9;
+                                    padding: 20px;
+                                    border-radius: 8px;
+                                    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+                                }
+
+                                .order-item {
+                                    display: flex;
+                                    justify-content: space-between;
+                                    padding: 10px 0;
+                                    border-bottom: 1px solid #ddd;
+                                }
+
+                                .order-item:last-child {
+                                    border-bottom: none;
+                                }
+
+                                .item-name {
+                                    font-size: 1em;
+                                    color: #555;
+                                }
+
+                                .item-subtotal {
+                                    font-size: 1.1em;
+                                    color: #e74c3c;
+                                    font-weight: bold;
+                                }
 
                                 h2 {
                                     text-align: center;
@@ -105,7 +133,9 @@
                                     <th>Net Total</th>
                                     <th>Details</th>
                                 </tr>
-                                <?php while ($order = $orders->fetch_assoc()): ?>
+                                <?php while ($order = $orders->fetch_assoc()): {
+                                    $id = $order['id'];
+                                } ?>
                                 <tr>
                                     <td><?php echo $order['id']; ?></td>
                                     <td><?php echo $order['order_date']; ?></td>
@@ -114,14 +144,20 @@
                                     <td>$<?php echo number_format($order['tax'], 2); ?></td>
                                     <td>$<?php echo number_format($order['net_total'], 2); ?></td>
                                     <td>
-                                        <button onclick="toggleDetails(<?php echo $order['id']; ?>)">View Details</button>
-                                        <div id="details-<?php echo $order['id']; ?>" class="details">
-                                            <?php 
-                                            $details = getOrderDetails($conn, $order['id']);
-                                            while ($detail = $details->fetch_assoc()): ?>
-                                            <p><?php echo $detail['name']; ?> (x<?php echo $detail['quantity']; ?>): $<?php echo number_format($detail['subtotal'], 2); ?></p>
-                                            <?php endwhile; ?>
-                                        </div>
+                                                                    <!-- Button to trigger modal -->
+                                                                    <a href="invoicedetails.php?invoiceId=<?php echo urlencode($id); ?>" class="btn btn-primary">
+    View Order Details
+</a>
+
+
+                                <!-- Modal -->
+                                
+
+                                    
+                                    </div>
+                                </div>
+                                </div>
+
                                     </td>
                                 </tr>
                                 <?php endwhile; ?>
@@ -131,7 +167,11 @@
                                     const details = document.getElementById(`details-${id}`);
                                     details.style.display = details.style.display === "none" ? "block" : "none";
                                 }
+
+
+                                
                             </script>
+
                             </main>
                         </body>
                         </html>
