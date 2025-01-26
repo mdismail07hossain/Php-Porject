@@ -11,13 +11,9 @@
                         $conn = mysqli_connect("localhost", "root", "", "phamanest_db");
 
                         $orders = $conn->query("SELECT * FROM orders");
-
-                        function getOrderDetails($conn, $orderId) {
-                            return $conn->query("SELECT products.name, order_items.quantity, order_items.subtotal 
-                                                FROM order_items
-                                                JOIN products ON order_items.product_id = products.id
-                                                WHERE order_id = $orderId");
-                        }
+                        // var_dump($orders);
+    
+                        
                         ?>
 
                         <!DOCTYPE html>
@@ -121,58 +117,35 @@
                             <!-------------- design end  --------------------->
                         </head>
                         <body>
-                            <main class="m-5">
-                            <h2>Purchase History</h2>
-                            <table>
-                                <tr>
-                                    <th>Order ID</th>
-                                    <th>Date</th>
-                                    <th>Total</th>
-                                    <th>Discount</th>
-                                    <th>Tax</th>
-                                    <th>Net Total</th>
-                                    <th>Details</th>
-                                </tr>
-                                <?php while ($order = $orders->fetch_assoc()): {
-                                    $id = $order['id'];
-                                } ?>
-                                <tr>
-                                    <td><?php echo $order['id']; ?></td>
-                                    <td><?php echo $order['order_date']; ?></td>
-                                    <td>$<?php echo number_format($order['total_amount'], 2); ?></td>
-                                    <td>$<?php echo number_format($order['discount'], 2); ?></td>
-                                    <td>$<?php echo number_format($order['tax'], 2); ?></td>
-                                    <td>$<?php echo number_format($order['net_total'], 2); ?></td>
-                                    <td>
-                                                                    <!-- Button to trigger modal -->
-                                                                    <a href="invoicedetails.php?invoiceId=<?php echo urlencode($id); ?>" class="btn btn-primary">
-    View Order Details
-</a>
-
-
-                                <!-- Modal -->
-                                
-
-                                    
-                                    </div>
-                                </div>
-                                </div>
-
-                                    </td>
-                                </tr>
-                                <?php endwhile; ?>
-                            </table>
-                            <script>
-                                function toggleDetails(id) {
-                                    const details = document.getElementById(`details-${id}`);
-                                    details.style.display = details.style.display === "none" ? "block" : "none";
-                                }
-
-
-                                
-                            </script>
-
-                            </main>
+                        <main class="m-5">
+        <h2>Purchase History</h2>
+        <table>
+            <tr>
+                <th>Order ID</th>
+                <th>Date</th>
+                <th>Total</th>
+                <th>Discount</th>
+                <th>Tax</th>
+                <th>Net Total</th>
+                <th>Details</th>
+            </tr>
+            <?php while ($order = $orders->fetch_assoc()): ?>
+            <tr>
+                <td><?php echo $order['id']; ?></td>
+                <td><?php echo $order['order_date']; ?></td>
+                <td>$<?php echo number_format($order['total_amount'], 2); ?></td>
+                <td>$<?php echo number_format($order['discount'], 2); ?></td>
+                <td>$<?php echo number_format($order['tax'], 2); ?></td>
+                <td>$<?php echo number_format($order['net_total'], 2); ?></td>
+                <td>
+                    <a href="invoicedetails.php?invoiceId=<?php echo urlencode($order['id']); ?>" class="btn btn-primary">
+                        View Order Details
+                    </a>
+                </td>
+            </tr>
+            <?php endwhile; ?>
+        </table>
+    </main>
                         </body>
                         </html>
                         <?php include("./pages/common_pages/footer.php");?>

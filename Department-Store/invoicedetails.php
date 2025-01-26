@@ -1,46 +1,139 @@
-<?php include('check_user.php'); ?>
-                        <!-- database -->
+<?php include("./pages/common_pages/header.php");?>
 
-                        <!-- header part -->
-                        <?php include("./pages/common_pages/header.php");?>
+<!--navbar and sidebar part start-->
+<?php include("./pages/common_pages/navber.php"); ?>
+<?php include("./pages/common_pages/sidebar.php"); ?>
+<?php
+$conn = mysqli_connect("localhost", "root", "", "phamanest_db");
 
-                        <!--navbar and sidebar part start-->
-                        <?php include("./pages/common_pages/navber.php"); ?>
-                        <?php include("./pages/common_pages/sidebar.php"); ?>
-                        <?php
-                        $conn = mysqli_connect("localhost", "root", "", "phamanest_db");
-                    if(isset($_GET['inoviceId'])) {
-                        $inoviceId = $_GET['inoviceId'];
-                        var_dump($inoviceId);
+if (isset($_GET['invoiceId'])) {
+    $invoiceId = $_GET['invoiceId'];
 
-                        $getInovice = "SELECT id FROM orders where id = $inoviceId";
-                        $stmt = $db_conn->prepare($getInovice);
-                        $stmt->bind_param("i", $inoviceId);
-                        $stmt->execute();
-                        $result = $stmt->get_result();
-                        var_dump($result);
+    // Prepare query to get the invoice details from the 'orders' table
+    $getInvoice = "SELECT * FROM orders WHERE id = ?";
+    $stmt = $conn->prepare($getInvoice);
+    $stmt->bind_param("i", $invoiceId);
+    $stmt->execute();
+    $result = $stmt->get_result();
 
-                        if ($result->num_rows > 0) {
-                            $invoices = $result->fetch_assoc();
-                            var_dump($invoices);
-                        } else {
-                            echo "Invoice not found.";
-                        }
-                    }        
+    if ($result->num_rows > 0) {
+        $invoice = $result->fetch_assoc();
+    } else {
+        echo "Invoice not found.";
+        exit;
+    }
+} else {
+    echo "No invoice ID provided.";
+    exit;
+}
+?>
 
-                       
-                        ?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice Details</title>
+    <style>
+        /* Grid layout for 2 columns */
+        .invoice-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px;
+            padding: 40px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
 
-                        <!DOCTYPE html>
-                        <html lang="en">
-                        <head>
-                            <meta charset="UTF-8">
-                            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                            <title>Document</title>
-                        </head>
-                        <body>
-                            <!-- <h2><?php echo htmlspecialchars($invoices['name'])?></h2> -->
-                        </body>
-                        </html>
+        .invoice-details .invoice-item {
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
 
-<?php include("./pages/common_pages/footer.php");?>
+        .invoice-details .invoice-item th {
+            text-align: left;
+            padding-bottom: 8px;
+        }
+
+        .invoice-details .invoice-item td {
+            padding-bottom: 8px;
+        }
+
+        .invoice-details .invoice-item .title {
+            font-weight: bold;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: rgb(11, 17, 174);
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+
+    </style>
+</head>
+<main>
+    <h2>Invoice Details for Order #<?php echo $invoice['id']; ?></h2>
+
+    <div class="invoice-details">
+        <div>
+            <img src="<?php echo "./asstes/images/Your_Needs1.png"?>" alt="">
+        </div>
+        <!-- Left Column: Invoice Details -->
+        <div class="invoice-item">
+            <table>
+                <tr>
+                    <th>Order ID</th>
+                    <td><?php echo $invoice['id']; ?></td>
+                </tr>
+                <tr>
+                    <th>Date</th>
+                    <td><?php echo $invoice['order_date']; ?></td>
+                </tr>
+                <tr>
+                    <th>Total Amount</th>
+                    <td>$<?php echo number_format($invoice['total_amount'], 2); ?></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Right Column: Additional Details (Discount, Tax, Net Total) -->
+        <div class="invoice-item">
+            <table>
+                <tr>
+                    <th>Discount</th>
+                    <td>$<?php echo number_format($invoice['discount'], 2); ?></td>
+                </tr>
+                <tr>
+                    <th>Tax</th>
+                    <td>$<?php echo number_format($invoice['tax'], 2); ?></td>
+                </tr>
+                <tr>
+                    <th>Net Total</th>
+                    <td>$<?php echo number_format($invoice['net_total'], 2); ?></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</main>
+</html>
+
+<?php include("./pages/common_pages/footer.php"); ?>
