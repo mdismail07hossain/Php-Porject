@@ -36,20 +36,29 @@ if (isset($_GET['invoiceId'])) {
     <title>Invoice Details</title>
     <style>
         /* Grid layout for 2 columns */
+        .invoice-detail{
+            margin: 20px;
+            padding: 40px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
         .invoice-details {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 20px;
-            margin: 20px;
-            padding: 40px;
-            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            /* margin: 20px; */
+            /* padding: 40px; */
+            /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+        }
+        .invoice_store{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
         }
 
         .invoice-details .invoice-item {
             background-color: #f9f9f9;
             padding: 15px;
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); */
         }
 
         .invoice-details .invoice-item th {
@@ -70,7 +79,7 @@ if (isset($_GET['invoiceId'])) {
             border-collapse: collapse;
             margin-top: 20px;
             background-color: #fff;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
         }
 
         th, td {
@@ -80,23 +89,38 @@ if (isset($_GET['invoiceId'])) {
         }
 
         th {
-            background-color: rgb(11, 17, 174);
-            color: white;
+            background:transparent;
+            color:rgb(75, 75, 75);
         }
 
         tr:nth-child(even) {
             background-color: #f2f2f2;
         }
-
+        
     </style>
 </head>
 <main>
-    <h2>Invoice Details for Order #<?php echo $invoice['id']; ?></h2>
+    
 
-    <div class="invoice-details">
+    <div class="invoice-detail">
+    <div class="invoice_store">
+    <div class="store">
+        <h4>Billing from</h4>
+        <p>Your Needs</p>
+        <p>Adddress : Mirpur-12</p>
+        <p>Email : yourneeds@gmail.com</p>
+    </div>
         <div>
-            <img src="<?php echo "./asstes/images/Your_Needs1.png"?>" alt="">
+            <img class="img" src="<?php echo "./asstes/images/Your_Needs1.png"?>" alt="" width="200" >
         </div>
+        <div class="store">
+        <h4>Billing to</h4>
+        <p>Customer : NOt founde</p>
+        <p>Number : 013*****215</p>
+        <p>Email : customer@gmail.com</p>
+    </div>
+    </div>
+        <div class="invoice-details">
         <!-- Left Column: Invoice Details -->
         <div class="invoice-item">
             <table>
@@ -133,6 +157,8 @@ if (isset($_GET['invoiceId'])) {
             </table>
         </div>
     </div>
+    </div>
+
 </main>
 </html>
 
