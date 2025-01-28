@@ -8,6 +8,7 @@
                     <?php include("./pages/common_pages/navber.php"); ?>
                     <?php include("./pages/common_pages/sidebar.php"); ?>
                     <?php
+                    session_start(); 
                     $conn = mysqli_connect("localhost", "root", "", "phamanest_db");
                     if (isset($_POST['add_product'])) {
                         $names = $_POST['name'];
@@ -15,12 +16,20 @@
                         $stocks = $_POST['stock'];
                         // $conn->query("INSERT INTO products (name, price, stock) VALUES ('$name', $price, $stock)");
                     
-                    if (!empty($names)) {
-                        foreach ($names as $index => $name) {
-                            $price = $prices[$index];
-                            $stock = $stocks[$index];
-                            $conn->query("INSERT INTO products (name, price, stock) VALUES ('$name', $price, $stock)");
-                        }}}
+                        if (!empty($names)) {
+                            foreach ($names as $index => $name) {
+                                $price = $prices[$index];
+                                $stock = $stocks[$index];
+                                $conn->query("INSERT INTO products (name, price, stock) VALUES ('$name', $price, $stock)");
+
+                                $_SESSION['success'] = "Add successfully.";
+                            }
+                        } else {
+                            $_SESSION['error'] = "Not found the Product.";
+                        }
+                        //  header('location:add_product.php');
+                         $conn->close();
+                    }
                     ?>
                     <!DOCTYPE html>
                     <html lang="en">
@@ -133,7 +142,19 @@
                     <body>
                     <main>
                         <h2>Product Management</h2>
+                        <a href="product_list.php" class="btn btn-success d-block my-2" role="button">View Prodect list</a>
                         <form method="POST">
+                             <?php
+        if (isset($_SESSION['success'])) {
+            echo "<p id='message' style='color: green;font-size: 30px;background-color: lightgreen; text-align: center; padding-left: 20px; padding-right: 20px; margin-left: 10px; margin-right: 10px;'>" . htmlspecialchars($_SESSION['success']) . "</p>";
+            unset($_SESSION['success']); // Clear the message after displaying it
+        }
+        
+        if (isset($_SESSION['error'])) {
+            echo "<p id='message' style='color: red;font-size: 30px;background-color: lightred; text-align: center; padding-left: 20px; padding-right: 20px; margin-left: 10px; margin-right: 10px;'>" . htmlspecialchars($_SESSION['error']) . "</p>";
+            unset($_SESSION['error']); // Clear the message after displaying it
+        }
+        ?>
                             <table id="medicineSellTable">
                                 <tr>
                                     <th>Product Name </th>
