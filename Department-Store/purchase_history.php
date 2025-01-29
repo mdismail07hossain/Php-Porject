@@ -25,7 +25,7 @@
                         <head>
                             <meta charset="UTF-8">
                             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                            <title>Purchase History</title>
+                            <title>Sell History</title>
                             <!------------------------- design start  ---------------------->
                             <style>
                                 /* body {
@@ -94,7 +94,10 @@
                         </head>
                         <body>
                             <main class="m-5">
-                            <h2>Purchase History</h2>
+                            <h2>Sell History</h2>
+                            <a href="add_purchase.php" class="btn btn-success d-block my-2" role="button">
+       Create New Sell
+        </a>
                             <table>
                                 <tr>
                                     <th>Order ID</th>

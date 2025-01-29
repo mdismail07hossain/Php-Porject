@@ -133,13 +133,8 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item"> <a href="./widgets/small-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
-                                        <p>Stock Report</p>
-                                    </a> </li>
-                                <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
-                                        <p>Stock Report (Batch Wise)</p>
-                                    </a> </li>
-                                <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
+
+                                <li class="nav-item"> <a href="stock.php" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                     <p>Available Stock</p>
                                     </a> </li>
                                 
@@ -170,41 +165,22 @@
                                 </p>
                             </a>
                             <ul class="nav nav-treeview">
-                                <li class="nav-item"> <a href="./widgets/small-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
-                                        <p>User Report</p>
+                                <li class="nav-item"> <a href="sale_report.php" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
+                                        <p>Sell Report</p>
                                     </a> </li>
-                                <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
-                                        <p>User Wise sale Report</p>
-                                    </a> </li>
-                              <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
-                                        <p>Product Wise Sales Report</p>
-                                    </a> </li>
-                                    <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
-                                        <p>Category Wise Sales Report</p>
-                                    </a> </li> 
+                               
+                              
+                                     
                                     <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
                                         <p>Purchase Report</p>
                                     </a> </li>      
                                 
                             </ul>
                         </li>
-                        <li class="nav-item"> <a href="#" class="nav-link"><i class="bi bi-person-workspace fs-4"></i>
-                                <p>
-                                   Role
-                                    <i class="nav-arrow bi bi-chevron-right fs-4 "></i>
-                                </p>
+                      
+                                
                             </a>
-                            <ul class="nav nav-treeview">
-                                <li class="nav-item"> <a href="./widgets/small-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
-                                        <p>Add Role</p>
-                                    </a> </li>
-                                <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
-                                        <p>Role List</p>
-                                    </a> </li>
-                                    <li class="nav-item"> <a href="./widgets/info-box.html" class="nav-link"><i class="bi bi-arrow-right-short fs-6 ms-3"></i>
-                                        <p>Assign List</p>
-                                    </a> </li>
-                            </ul>
+                           
                         </li>
                         <li class="nav-item"> <a href="#" class="nav-link"><i class="bi bi-gear fs-4"></i>
                                 <p>

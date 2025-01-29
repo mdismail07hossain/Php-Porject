@@ -8,7 +8,7 @@
                     <?php include("./pages/common_pages/navber.php"); ?>
                     <?php include("./pages/common_pages/sidebar.php"); ?>
                     <?php
-                    session_start(); 
+                    
                     $conn = mysqli_connect("localhost", "root", "", "phamanest_db");
                     if (isset($_POST['add_product'])) {
                         $names = $_POST['name'];
@@ -144,7 +144,7 @@
                         <h2>Product Management</h2>
                         <a href="product_list.php" class="btn btn-success d-block my-2" role="button">View Prodect list</a>
                         <form method="POST">
-                             <?php
+                        <?php
         if (isset($_SESSION['success'])) {
             echo "<p id='message' style='color: green;font-size: 30px;background-color: lightgreen; text-align: center; padding-left: 20px; padding-right: 20px; margin-left: 10px; margin-right: 10px;'>" . htmlspecialchars($_SESSION['success']) . "</p>";
             unset($_SESSION['success']); // Clear the message after displaying it
@@ -240,5 +240,14 @@
                 calculateSubTotal();
             }
         </script>
+        <script>
+    // Hide the message after 3 seconds
+    setTimeout(() => {
+        const messageElement = document.getElementById('success');
+        if (messageElement) {
+            messageElement.style.display = 'none';
+        }
+    }, 1000);
+</script>
 
                     <?php include("./pages/common_pages/footer.php");?>

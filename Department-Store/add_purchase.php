@@ -98,7 +98,21 @@
             <label for="search-input">Search by name</label>
             <input type="text" id="search-input" class="form-control" placeholder="Enter product name">
         </div>
+        <a href="purchase_history.php" class="btn btn-success d-block my-2" role="button">
+        View Sell List
+        </a>
         <form method="POST" id="order-form">
+        <?php
+        if (isset($_SESSION['success'])) {
+            echo "<p id='message' style='color: green;font-size: 30px;background-color: lightgreen; text-align: center; padding-left: 20px; padding-right: 20px; margin-left: 10px; margin-right: 10px;'>" . htmlspecialchars($_SESSION['success']) . "</p>";
+            unset($_SESSION['success']); // Clear the message after displaying it
+        }
+        
+        if (isset($_SESSION['error'])) {
+            echo "<p id='message' style='color: red;font-size: 30px;background-color: lightred; text-align: center; padding-left: 20px; padding-right: 20px; margin-left: 10px; margin-right: 10px;'>" . htmlspecialchars($_SESSION['error']) . "</p>";
+            unset($_SESSION['error']); // Clear the message after displaying it
+        }
+        ?>
             <table>
                 <thead>
                     <tr>
@@ -151,7 +165,7 @@
 
                 $conn->query("INSERT INTO order_items (order_id, product_id, quantity, subtotal) VALUES ($orderId, $productId, $quantity, $subtotal)");
                 $conn->query("UPDATE products SET stock = stock - $quantity WHERE id=$productId");
-            }
+            }        
         }
 
         $discountAmount = ($total * $discount) / 100;
@@ -168,8 +182,13 @@
                 <tr><td>Tax</td><td>$" . number_format($tax, 2) . "</td></tr>
                 <tr><td><strong>Net Total</strong></td><td><strong>$" . number_format($netTotal, 2) . "</strong></td></tr>
               </table>";
-             
+                           
     }
+
+                         
+                        //  header('location:add_product.php');
+                         
+                      
     ?>
     </main>
 </body>

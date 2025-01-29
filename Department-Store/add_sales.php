@@ -16,6 +16,30 @@ $type = isset($_GET['type']) ? $_GET['type'] : null;
 
 
 ?>
+<?php
+                    
+                    $conn = mysqli_connect("localhost", "root", "", "phamanest_db");
+                    if (isset($_POST['add_product'])) {
+                        $names = $_POST['name'];
+                        $prices = $_POST['price'];
+                        $stocks = $_POST['stock'];
+                        // $conn->query("INSERT INTO products (name, price, stock) VALUES ('$name', $price, $stock)");
+                    
+                        if (!empty($names)) {
+                            foreach ($names as $index => $name) {
+                                $price = $prices[$index];
+                                $stock = $stocks[$index];
+                                $conn->query("INSERT INTO products (name, price, stock) VALUES ('$name', $price, $stock)");
+
+                                $_SESSION['success'] = "Purchase successfully.";
+                            }
+                        } else {
+                            $_SESSION['error'] = "Not found the Product.";
+                        }
+                        //  header('location:add_product.php');
+                         $conn->close();
+                    }
+                    ?>
   <style>
      h2 {
             text-align: center;
@@ -28,13 +52,25 @@ $type = isset($_GET['type']) ? $_GET['type'] : null;
 
 <div class="container mt-5">
         <div class="d-flex justify-content-between">
-        <h1 >Sell Product</h1>
+        <h1 >Purchase Product</h1>
             <div>
             <a href="purchase_history.php" class="btn btn-success d-block my-2" role="button">
         View Sell List
         </a>
             </div>
+
         </div>
+        <?php
+        if (isset($_SESSION['success'])) {
+            echo "<p id='message' style='color: green;font-size: 30px;background-color: lightgreen; text-align: center; padding-left: 20px; padding-right: 20px; margin-left: 10px; margin-right: 10px;'>" . htmlspecialchars($_SESSION['success']) . "</p>";
+            unset($_SESSION['success']); // Clear the message after displaying it
+        }
+        
+        if (isset($_SESSION['error'])) {
+            echo "<p id='message' style='color: red;font-size: 30px;background-color: lightred; text-align: center; padding-left: 20px; padding-right: 20px; margin-left: 10px; margin-right: 10px;'>" . htmlspecialchars($_SESSION['error']) . "</p>";
+            unset($_SESSION['error']); // Clear the message after displaying it
+        }
+        ?>
 
     <form id="sellMedicineForm">
     <div class="row mb-4">
@@ -70,24 +106,32 @@ $type = isset($_GET['type']) ? $_GET['type'] : null;
                 <thead class="table-primary">
                     <tr>
                         <th scope="col">Product Name</th>
+                        <th scope="col">Purchase Price</th>
+                        <th scope="col">Sell Price </th>
                         <th scope="col">Quantity</th>
-                        <th scope="col">Price per Unit</th>
-                        <th scope="col">Total Cost</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td><input type="text" class="form-control" name="medicineName[]" placeholder="Enter name" required></td>
-                        <td><input type="number" class="form-control quantity" name="quantity[]" placeholder="Enter quantity" min="1" required></td>
-                        <td><input type="number" class="form-control price" name="price[]" placeholder="Enter price" min="0" required></td>
-                        <td><input type="number" class="form-control total-cost" name="totalCost[]" readonly></td>
-                        <td>
-                            <button type="button" class="btn btn-danger btn-sm" onclick="removeMedicineRow(this)">
-                                <i class="bi bi-trash"></i>
-                            </button>
-                        </td>
-                    </tr>
+                <tr>
+                                    <td>
+                                        <input type="text" name="name[]" placeholder="product name" id="name" >
+                                    </td>
+                                    <td>
+                                    <input type="number" name="price2[]" placeholder="product price" id="price" >
+                                    </td>
+                                    <td>
+                                    <input type="number" name="price[]" placeholder="product price" id="price" >
+                                    </td>
+                                    <td>
+                                    <input type="number" name="stock[]" placeholder="product stock" id="stock" >
+                                    </td>
+                                    <td>
+                                     <button type="button" class="btn btn-danger btn-sm" onclick="removeMedicineRow(this)">
+                                     <i class="bi bi-trash"></i>
+                                    </button>
+                                     </td>
+                                </tr>
                 </tbody>
             </table>
         </div>
@@ -124,7 +168,7 @@ $type = isset($_GET['type']) ? $_GET['type'] : null;
         </div>
 
         <div class="text-center">
-            <button type="submit" class="btn btn-success">Submit</button>
+            <button type="submit" class="btn btn-success" name="add_product">Submit</button>
         </div>
     </form>
 </div>
@@ -143,110 +187,72 @@ $type = isset($_GET['type']) ? $_GET['type'] : null;
     </script>
 
 <script>
-    // Function to add a new row
-    function addMedicineRow() {
-        const table = document.getElementById('medicineSellTable').getElementsByTagName('tbody')[0];
-        const newRow = table.insertRow();
+            // Function to add a new row
+            function addMedicineRow() {
+                const table = document.getElementById('medicineSellTable').getElementsByTagName('tbody')[0];
+                const newRow = table.insertRow();
 
-        // Medicine Name
-        const cell1 = newRow.insertCell(0);
-        const input1 = document.createElement('input');
-        input1.type = 'text';
-        input1.className = 'form-control';
-        input1.name = 'medicineName[]';
-        input1.placeholder = 'Enter name';
-        input1.required = true;
-        cell1.appendChild(input1);
+                // Product Name
+                const cell1 = newRow.insertCell(0);
+                const input1 = document.createElement('input');
+                input1.type = 'text';
+                input1.className = 'form-control';
+                input1.name = "name[]";
+                input1.placeholder = 'Product Name';
+                cell1.appendChild(input1);
 
-        // Quantity
-        const cell2 = newRow.insertCell(1);
-        const input2 = document.createElement('input');
-        input2.type = 'number';
-        input2.className = 'form-control quantity';
-        input2.name = 'quantity[]';
-        input2.placeholder = 'Enter quantity';
-        input2.min = '1';
-        input2.required = true;
-        input2.oninput = calculateRowTotal;
-        cell2.appendChild(input2);
+                //Product price
+                const cell2 = newRow.insertCell(1);
+                const input2 = document.createElement('input');
+                input2.type = 'number';
+                input2.className = 'form-control quantity';
+                input2.name = 'price2[]';
+                input2.placeholder = 'Enter product price';
+                cell2.appendChild(input2);
+                //Product price
+                const cell3 = newRow.insertCell(2);
+                const input3 = document.createElement('input');
+                input2.type = 'number';
+                input2.className = 'form-control quantity';
+                input2.name = 'price[]';
+                input2.placeholder = 'Enter product price';
+                cell2.appendChild(input2);
 
-        // Price per Unit
-        const cell3 = newRow.insertCell(2);
-        const input3 = document.createElement('input');
-        input3.type = 'number';
-        input3.className = 'form-control price';
-        input3.name = 'price[]';
-        input3.placeholder = 'Enter price';
-        input3.min = '0';
-        input3.required = true;
-        input3.oninput = calculateRowTotal;
-        cell3.appendChild(input3);
+                // Product stock
+                const cell4 = newRow.insertCell(3);
+                const input4 = document.createElement('input');
+                input3.type = 'number';
+                input3.className = 'form-control price';
+                input3.name = 'stock[]';
+                input3.placeholder = 'Product stock';
+                cell3.appendChild(input3);
+                // Remove Button
+                const cell5 = newRow.insertCell(4);
+                const button = document.createElement('button');
+                button.type = 'button';
+                button.className = 'btn btn-danger btn-sm';
+                button.innerHTML = '<i class="bi bi-trash"></i>';
+                button.onclick = function () {
+                    removeMedicineRow(button);
+                };
+                cell5.appendChild(button);
+            }
 
-        // Total Cost
-        const cell4 = newRow.insertCell(3);
-        const input4 = document.createElement('input');
-        input4.type = 'number';
-        input4.className = 'form-control total-cost';
-        input4.name = 'totalCost[]';
-        input4.readOnly = true;
-        cell4.appendChild(input4);
-
-        // Remove Button
-        const cell5 = newRow.insertCell(4);
-        const button = document.createElement('button');
-        button.type = 'button';
-        button.className = 'btn btn-danger btn-sm';
-        button.innerHTML = '<i class="bi bi-trash"></i>';
-        button.onclick = function () {
-            removeMedicineRow(button);
-        };
-        cell5.appendChild(button);
-    }
-
-    // Function to remove a row
-    function removeMedicineRow(button) {
-        const row = button.closest('tr');
-        row.remove();
-        calculateSubTotal();
-    }
-
-    // Calculate total cost for a row
-    function calculateRowTotal() {
-        const row = this.closest('tr');
-        const quantity = row.querySelector('.quantity').value || 0;
-        const price = row.querySelector('.price').value || 0;
-        const totalCost = row.querySelector('.total-cost');
-        totalCost.value = quantity * price;
-        calculateSubTotal();
-    }
-
-    // Calculate sub total
-    function calculateSubTotal() {
-        let subTotal = 0;
-        const totalCosts = document.querySelectorAll('.total-cost');
-        totalCosts.forEach(input => {
-            subTotal += parseFloat(input.value) || 0;
-        });
-        document.getElementById('subAmount').value = subTotal;
-        calculateTotal();
-    }
-
-    // Calculate total after discount
-    function calculateTotal() {
-        const subTotal = parseFloat(document.getElementById('subAmount').value) || 0;
-        const discount = parseFloat(document.getElementById('discount').value) || 0;
-        const payableAmount = subTotal - discount;
-        document.getElementById('payableAmount').value = payableAmount;
-        calculateDueAmount();
-    }
-
-    // Calculate due amount
-    function calculateDueAmount() {
-        const payableAmount = parseFloat(document.getElementById('payableAmount').value) || 0;
-        const receivedAmount = parseFloat(document.getElementById('receivedAmount').value) || 0;
-        const dueAmount = payableAmount - receivedAmount;
-        document.getElementById('dueAmount').value = dueAmount >= 0 ? dueAmount : 0;
-    }
+            // Function to remove a row
+            function removeMedicineRow(button) {
+                const row = button.closest('tr');
+                row.remove();
+                calculateSubTotal();
+            }
+        </script>
+        <script>
+    // Hide the message after 3 seconds
+    setTimeout(() => {
+        const messageElement = document.getElementById('success');
+        if (messageElement) {
+            messageElement.style.display = 'none';
+        }
+    }, 1000);
 </script>
 
 
