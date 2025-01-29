@@ -16,8 +16,9 @@
                 <a href="#" class="text-muted d-block mt-2">Show Details</a>
               </div>
               <div class="text-right">
+                
                 <h5 class="fw-semibold text-dark">Total Sell</h5>
-                <h4 class="text-success fw-bold">$00.00</h4>
+                <h4 class="text-success fw-bold">$4512.00</h4>
               </div>
             </div>
           </div>
@@ -33,7 +34,7 @@
               </div>
               <div class="text-right">
                 <h5 class="fw-semibold text-dark">Total Cost</h5>
-                <h4 class="text-warning fw-bold">$00.00</h4>
+                <h4 class="text-warning fw-bold">$2460.00</h4>
               </div>
             </div>
           </div>
@@ -49,7 +50,7 @@
               </div>
               <div class="text-right">
                 <h5 class="fw-semibold text-dark">Total Profit</h5>
-                <h4 class="text-primary fw-bold">$00.00</h4>
+                <h4 class="text-primary fw-bold">$2052.00</h4>
               </div>
             </div>
           </div>
@@ -133,7 +134,7 @@
             </div>
             <div class="d-flex flex-column align-items-center">
               <h4 class="fw-semibold text-white">Total Products</h4>
-              <h2 class="text-center text-white">55</h2>
+              <h2 class="text-center text-white">25</h2>
               <a href="#" class="text-info">Show Details</a>
             </div>
           </div>
